@@ -1,4 +1,4 @@
-<h1 align=center>caelestia-shell</h1>
+<h1 align=center>qs-shell</h1>
 
 <div align=center>
 
