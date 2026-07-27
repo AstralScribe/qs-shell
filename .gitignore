@@ -7,3 +7,5 @@ logs
 .idea/
 install/
 third_party/m3shapes/
+reference/
+.claude/

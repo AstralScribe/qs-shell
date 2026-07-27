@@ -1,30 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
-
-if(NOT DEFINED VERSION)
-    execute_process(COMMAND git describe --tags --abbrev=0
-        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
-        OUTPUT_VARIABLE VERSION
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-    )
-
-    if("${VERSION}" STREQUAL "")
-        message(FATAL_ERROR "VERSION is not set and failed to get from git")
-    endif()
-endif()
-
-if(NOT DEFINED GIT_REVISION)
-    execute_process(COMMAND git rev-parse HEAD
-        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
-        OUTPUT_VARIABLE GIT_REVISION
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-    )
-
-    if("${GIT_REVISION}" STREQUAL "")
-        message(FATAL_ERROR "GIT_REVISION is not set and failed to get from git")
-    endif()
-endif()
-
-string(REGEX REPLACE "^v" "" VERSION "${VERSION}")
+set(VERSION 1.0)
 
 project(qs-shell VERSION ${VERSION} LANGUAGES CXX)
 
